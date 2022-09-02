@@ -73,7 +73,6 @@ while True:
                     new_follows.append(follow.username)
                 
                 if new_follows:
-                    
                     for dataset in user_data:
                         
                         if dataset.get("id") is user.get("id"):
@@ -81,7 +80,11 @@ while True:
                             #write new follows in users.json
                             with open("./data/users.json", "w") as f:
                                 f.write(json.dumps(user_data, indent=4))
-                    
+                            if len(user.get('follows')) == 0:
+                                user.update(dataset)
+                                new_follows.clear()
+                                break
+                            user.update(dataset)                    
                     html_str = f"<b>NEW follow detected from: {user.get('username')}</b>\n"
                     for follow in new_follows:
                         html_str += f"{follow}: https://twitter.com/{follow}\n"

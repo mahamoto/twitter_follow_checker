@@ -1,2 +1,4 @@
 .venv
-test_config.json
+config.json.empty
+/data/users.json
+config.json
