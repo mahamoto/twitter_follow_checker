@@ -1,0 +1,10 @@
+{
+    "bearer_token": "",
+    "wait_between_api_calls": 10,
+    "telegram_token": "",
+    "channel_id": "",
+    "usernames": [
+        "",
+        ""
+    ]
+}
